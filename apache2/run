@@ -1,0 +1,7 @@
+#!/bin/sh
+exec 2>&1
+if [ -e /etc/apache2/envvars ];
+then
+	. /etc/apache2/envvars
+fi
+exec apache2 -DNO_DETACH
